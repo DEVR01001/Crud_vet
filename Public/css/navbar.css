@@ -1,0 +1,79 @@
+header{
+    display: flex;
+    width: 100%;
+}
+
+header nav{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+header nav ul{
+    display: flex;
+    gap: 3rem;
+    width: 40%;
+    justify-content: center;
+}
+header nav ul li{
+    display: flex;
+}
+
+header nav ul li a{
+    display: flex;
+    color:#4e4e4e;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out
+}
+
+
+header nav ul li a:hover{
+    transform: translateY(-10px);
+    color: #888888;
+}
+
+
+.img_container_logo{
+    display: flex;
+    padding-left: 2rem;
+    width: 30%;
+}
+.img_container_logo img{
+    display: flex;
+    width: 90px;
+    cursor: pointer;
+}
+
+.container_btn_consulta{
+    display: flex;
+    width: 30%;
+    justify-content: end;
+    padding-right: 3rem;
+}
+
+
+.container_btn_consulta .btn_consulta{
+    display: flex;
+    width: 150px;
+    border-radius: 5px;
+    background-color:#28CB8B;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    color: white;
+    border: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    
+}
+
+.container_btn_consulta .btn_consulta:hover{
+    background-color: #20855d;
+    font-size: 15px;
+}

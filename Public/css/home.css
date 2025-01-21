@@ -1,0 +1,158 @@
+.swiper-slide img{
+    display: flex;
+    justify-self: center;
+    width: 95%;
+    border-radius: 5px;
+}
+
+
+.serviços{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container_card_service{
+    display: flex;
+    width: 90%;
+    gap:2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.card_service{
+    display: flex;
+    width: 350px;
+    height: 230px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(245, 245, 245);
+    flex-direction: column;
+    transition: 0.2s ease;
+}
+
+
+.img_service{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.img_service i{
+    display: flex;
+    color: #f39200;
+    font-size: 24px;
+}
+
+.shape_service{
+    display: flex;
+    background-color: #f3920041;
+    position: absolute;
+    width: 35px;
+    height: 40px;
+    left: 6px;
+    border-radius: 15px 5px 5px 10px;
+}
+
+.title_service_card{
+    display: flex;
+    font-size: 20px;
+    font-weight: 700;
+    color: #4e4e4e;
+    padding-top: 20px;
+}
+
+.body_service{
+    display: flex;
+    font-size: 15px;
+    color: #838383;
+    text-align: center;
+    
+}
+
+
+
+
+
+
+
+
+
+
+.sobre_vet{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.conatiner_sobre_body{
+    display: flex;
+    width: 100%;
+    padding-top: 2rem;
+
+}
+
+.sobre_left, .sobre_right{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    position: relative;
+}
+
+.sobre_right{
+    gap: 1rem;
+}
+.sobre_right .sobre_title{
+    display: flex;
+    font-size: 20px;
+    font-weight: 600;
+    color: #4e4e4e;
+}
+
+.sobre_right .text_sobre{
+    display: flex;
+    color: #7e7e7e;
+    text-align: justify;
+    width: 80%;
+}
+
+.sobre_left{
+    align-items: center;
+    justify-content: start;
+}
+.sobre_left img{
+    display: flex;
+    width: 450px;
+
+}
+
+.sobre_btn{
+    display: flex;
+
+}
+
+.sobre_btn a{
+    width: 150px;
+    height: 35px;
+    background-color:#f39200;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    text-decoration: none;
+    display: flex;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.sobre_btn a:hover{
+    transform: translateX(10px);
+    background-color: #4e4e4e;
+}

@@ -1,0 +1,67 @@
+.serviços{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container_card_service{
+    display: flex;
+    width: 90%;
+    gap:2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.card_service{
+    display: flex;
+    width: 350px;
+    height: 230px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(245, 245, 245);
+    flex-direction: column;
+}
+
+.img_service{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.img_service i{
+    display: flex;
+    color: #f39200;
+    font-size: 24px;
+}
+
+.shape_service{
+    display: flex;
+    background-color: #f3920041;
+    position: absolute;
+    width: 35px;
+    height: 40px;
+    left: 6px;
+    border-radius: 15px 5px 5px 10px;
+}
+
+.title_service_card{
+    display: flex;
+    font-size: 20px;
+    font-weight: 700;
+    color: #4e4e4e;
+    padding-top: 20px;
+}
+
+.body_service{
+    display: flex;
+    font-size: 15px;
+    color: #838383;
+    text-align: center;
+    
+}
