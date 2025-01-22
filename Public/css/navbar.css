@@ -25,10 +25,11 @@ header nav ul li{
 header nav ul li a{
     display: flex;
     color:#4e4e4e;
-    text-decoration: none;
     font-size: 14px;
     font-weight: 500;
-    transition: all 0.3s ease-in-out
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+
 }
 
 
@@ -70,6 +71,7 @@ header nav ul li a:hover{
     font-weight: 600;
     transition: all 0.2s ease;
     cursor: pointer;
+    text-decoration: none;
     
 }
 

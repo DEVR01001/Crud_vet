@@ -121,3 +121,75 @@ class Database{
 
 
 ?>
+
+
+
+
+<!-- 
+
+create database Dogma;
+
+show databases;
+
+use Dogma;
+
+show tables;
+
+drop database Dogma;
+
+
+create table cliente(
+	id_cliente INT NOT NULL AUTO_INCREMENT,
+    nome varchar(150) not null,
+    cep char(9) not null,
+    cpf char(11) unique not null,
+    telefone char(11) not null,
+    numero_casa int(5) not null,
+    complemento varchar(200),
+     /*chave primaria*/
+    constraint primary key(id_cliente)
+);
+
+
+create table veterinario(
+	id_vet INT NOT NULL AUTO_INCREMENT,
+    nome varchar(150) not null,
+    cep char(9) not null,
+    cpf char(11) unique not null,
+    telefone char(11) not null,
+	crmv char(20) unique not null,
+
+     /*chave primaria*/
+    constraint primary key(id_vet)
+);
+
+
+
+create table animal(
+	id_animal INT NOT NULL AUTO_INCREMENT,
+    nome varchar(150) not null,
+    tipo varchar(50) not null,
+    idade varchar(50) unique not null,
+	id_cliente int not null,
+    constraint primary key(id_animal),
+    
+	foreign key(id_cliente) references cliente(id_cliente)
+);
+
+
+CREATE TABLE consulta (
+    id_consulta INT NOT NULL AUTO_INCREMENT,
+    descricao_ani TEXT NOT NULL,
+    consulta_date DATE NOT NULL,  
+    consulta_time TIME NOT NULL,
+    id_animal INT NOT NULL,
+    id_vet INT NOT NULL,
+    PRIMARY KEY (id_consulta),
+    FOREIGN KEY (id_animal) REFERENCES animal(id_animal),
+    FOREIGN KEY (id_vet) REFERENCES veterinario(id_vet)
+);
+
+
+
+ -->
+
