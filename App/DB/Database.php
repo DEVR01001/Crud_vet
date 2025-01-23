@@ -170,6 +170,7 @@ create table animal(
     nome varchar(150) not null,
     tipo varchar(50) not null,
     idade varchar(50) unique not null,
+    descricao_ani TEXT NOT NULL,
 	id_cliente int not null,
     constraint primary key(id_animal),
     
@@ -179,7 +180,6 @@ create table animal(
 
 CREATE TABLE consulta (
     id_consulta INT NOT NULL AUTO_INCREMENT,
-    descricao_ani TEXT NOT NULL,
     consulta_date DATE NOT NULL,  
     consulta_time TIME NOT NULL,
     id_animal INT NOT NULL,
