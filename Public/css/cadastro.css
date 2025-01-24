@@ -132,7 +132,7 @@
     display: flex;
     width: 350px;
     height: 35px;
-    border-radius: 30px;
+    border-radius: 5px;
     background-color: #f4f4f4c7;
     border: none;
     outline: none;
@@ -142,6 +142,11 @@
 
 .n_casa input{
     width: 100px;
+
+}
+.comple input{
+    width:700px;
+    height: 40px;
 
 }
 
@@ -263,4 +268,37 @@
 
 .contanier_btn_cad .btn_salvar:hover{
     background-color: #0d7c50;
+}
+
+
+
+
+
+
+
+
+.container_consulta{
+    display: flex;
+    width: 100%;
+    padding-top: 2rem;
+    flex-direction: column;
+}
+
+
+
+
+.container_consulta .container_text_ani{
+    display: flex;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+}
+.container_consulta .container_text_ani h6{
+    display: flex;
+    color: #acacac;
+    font-size: 14px;
+    width: 100%;
+    font-weight: 400;
+
 }

@@ -25,6 +25,8 @@ class Database{
             $this->conection = new PDO("mysql:host=".$this->local.";dbname=$this->db",
             $this->user,$this->password); 
             $this->conection->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+            // $conn = $this->conection->lastInsertId();
+            // print_r($conn);
             return true;
         }catch (PDOException $err){
             die("Connection Failed" . $err->getMessage());
@@ -111,6 +113,8 @@ class Database{
         return  true;
 
     }
+
+
 
 
 
