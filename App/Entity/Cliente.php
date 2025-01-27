@@ -20,6 +20,12 @@ class Cliente{
     public string $complemento;
 
 
+    public static function buscar($where=null,$order=null,$limit=null){
+        //FETCHALL
+        return (new Database('cliente'))->select()->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
     public function insert_cliente(){
 
         $db =  new Database('cliente');
@@ -47,6 +53,8 @@ class Cliente{
         }else{
             return false;
         }
+
+
 
 
 

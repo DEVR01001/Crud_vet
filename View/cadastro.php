@@ -1,28 +1,25 @@
-<!-- 
-
 <?php
-
 
 require '../App/Entity/Animal.php';
 require '../App/Entity/Cliente.php';
+require '../App/Entity/Consulta.php';
+
+if (isset($_POST['cadastrar'])) {
 
 
 
 
-if (isset($_POST['cadastrar'])){
+    $nome_cli = $_POST['nome_cli'];
+    $cpf = $_POST['cpf'];
+    $telefone = $_POST['telefone'];
+    $cep = $_POST['cep'];
+    $rua = $_POST['rua'];
+    $num_casa = $_POST['num_casa'];
+    $bairro = $_POST['bairro'];
+    $complemento = $_POST['complemento'];
 
 
-    $nome_cli= $_POST['nome_cli'];
-    $cpf= $_POST['cpf'];
-    $telefone= $_POST['telefone'];
-    $cep= $_POST['cep'];
-    $rua= $_POST['rua'];
-    $num_casa= $_POST['num_casa'];
-    $bairro= $_POST['bairro'];
-    $complemento= $_POST['complemento'];
-
-
-    $cliente= new Cliente();
+    $cliente = new Cliente();
     $cliente->nome_cliente = $nome_cli;
     $cliente->cpf = $cpf;
     $cliente->telefone = $telefone;
@@ -32,54 +29,58 @@ if (isset($_POST['cadastrar'])){
     $cliente->bairro = $bairro;
     $cliente->complemento = $complemento;
 
+    $lastId_cli = $cliente->insert_cliente();
 
-    $lastId= $cliente->insert_cliente();
-
-
-
-    if($cliente){
-        echo "Deu certo cli";
-    }else{
-        echo 'não deu certo cli';
+    if (!$lastId_cli) {
+        echo "Erro ao cadastrar cliente!";
+        exit();
     }
 
 
 
 
 
-    $nome_ani= $_POST['nome_ani'];
-    $raça= $_POST['raça'];
-    $idade= $_POST['idade'];
-    $descricao= $_POST['descricao'];
+    
+
+    $nome_ani = $_POST['nome_ani'];
+    $raca = $_POST['raça'];
+    $idade = $_POST['idade'];
+    $descricao = $_POST['descricao'];
 
 
-    $animal= new Animal();
-    $animal->nome= $nome_ani;
-    $animal->tipo= $raça;
-    $animal->idade= $idade;
-    $animal->descricao= $descricao;
-    $animal->id_cliente= $lastId;
+    $animal = new Animal();
+    $animal->nome = $nome_ani;
+    $animal->tipo = $raca;
+    $animal->idade = $idade;
+    $animal->descricao = $descricao;
+    $animal->id_cliente = $lastId_cli;
 
+    $lastId_ani = $animal->insert_animal();
 
-    $animal->insert_animal();
-
-
-    if($animal){
-        echo "Deu certo ani";
-    }else{
-        echo 'não deu certo ani';
+    if (!$lastId_ani) {
+        echo "Erro ao cadastrar animal!";
+        exit();
     }
 
 
 
 
+    $date_consulta = $_POST['date'];
+
+    $consulta = new Consulta();
+    $consulta->consulta_date = $date_consulta;
+    $consulta->id_animal = $lastId_ani;
+
+    $resultado_consulta = $consulta->insert_consulta();
+
+    if ($resultado_consulta) {
+        echo "Cadastro completo com sucesso!";
+    } else {
+        echo "Erro ao cadastrar consulta!";
+    }
 }
-
-
-
-
 ?>
- -->
+
 
 
 <!DOCTYPE html>

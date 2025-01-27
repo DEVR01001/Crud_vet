@@ -4,10 +4,10 @@
 class Database{
 
     public $conection;
-    public string $local = '10.38.0.117';
+    public string $local = 'localhost';
     public string $db = 'Dogma';
-    public string $user = 'devweb';
-    public string $password = 'suporte@22';
+    public string $user = 'root';
+    public string $password = '';
     public $table;
 
 
@@ -148,6 +148,8 @@ create table cliente(
     cep char(9) not null,
     cpf char(11) unique not null,
     telefone char(11) not null,
+    rua varchar(150) not null,
+    bairro varchar(150) not null,
     numero_casa int(5) not null,
     complemento varchar(200),
      /*chave primaria*/
@@ -185,9 +187,10 @@ create table animal(
 CREATE TABLE consulta (
     id_consulta INT NOT NULL AUTO_INCREMENT,
     consulta_date DATE NOT NULL,  
-    consulta_time TIME NOT NULL,
+    consulta_time TIME DEFAULT CURRENT_TIME NOT NULL,
+    status char(2),
     id_animal INT NOT NULL,
-    id_vet INT NOT NULL,
+    id_vet INT,
     PRIMARY KEY (id_consulta),
     FOREIGN KEY (id_animal) REFERENCES animal(id_animal),
     FOREIGN KEY (id_vet) REFERENCES veterinario(id_vet)

@@ -8,31 +8,23 @@ class Consulta{
 
 
 
-    public int $id_;
-    public string $nome;
-    public string $tipo;
-    public string $idade;
-    public string $descricao;
-    public int $id_cliente;
+    public int $id_consulta;
+    public string $consulta_date;
+    public string $id_animal;
+    public string $id_vet;
 
     
 
 
+    public function insert_consulta(){
 
-    public function insert_animal(){
-
-        $db =  new Database('animal');
+        $db =  new Database('consulta');
 
         $result = $db->insert(
             [
 
-                'nome'=> $this->nome,
-                'tipo'=> $this->tipo,
-                'idade'=> $this->idade,
-                'descricao_ani'=> $this->descricao,
-                'id_cliente'=> $this->id_cliente,
-
-
+                'consulta_date'=> $this->consulta_date,
+                'id_animal'=> $this->id_animal,
             ]
             
             );
@@ -42,6 +34,15 @@ class Consulta{
         }else{
             return false;
         }
+
+    }
+
+
+    public function select_consulta(){
+        
+        
+
+
 
 
 
