@@ -24,17 +24,16 @@ class Animal{
 
     public function getNomeDono(){
 
-        $sql= 'SELECT cliente.nome, animal.nome FROM animal INNER JOIN cliente ON animal.id_cliente cliente.id_cliente';
+        
 
-        $fileds= 'cliente.nome, animal.nome';
-        $table = 'animal';
-        $Ineer =  'INNER JOIN cliente';
-        $on= 'ON animal.id_cliente cliente.id_cliente';
+        $fileds= 'animal.*, cliente.nome as nomeDono ';
+        $table = 'cliente';
+        $on= 'animal.id_cliente = cliente.id_cliente';
 
-        return (new Database('animal'))->select($fileds,$table,$Ineer,$on);
+        $result = (new Database('animal'))->Inner($fileds, $table, $on)->fetchAll(PDO::FETCH_ASSOC);
+    
+       return $result;
 
-        // print_r($result);
-        // exit();
 
     }
 

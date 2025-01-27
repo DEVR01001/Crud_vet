@@ -75,12 +75,13 @@
 
 
 .nav_adm ul li .link:hover{
-    color: #f39200;
+    color: #ff5757;
 }
 
 
 #active{
-    color: #f39200;
+    color: #ff5757;
+    font-weight: 600;
 }
 
 
@@ -115,6 +116,31 @@
     background-color:white;
     height: 10vh;
     padding: 1rem;
+}
+
+.container_btn_cad_vet{
+    display: flex;
+    padding-right: 1rem;
+}
+
+.container_btn_cad_vet .btn_vet{
+    display: flex;
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: #ff5757;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.container_btn_cad_vet .btn_vet:hover{
+    background-color: #ad3535;
 }
 
 

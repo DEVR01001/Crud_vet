@@ -1,4 +1,18 @@
 
+
+<?php
+
+require '../App/Entity/Veterinario.php';
+
+
+$dados = new Veterinario();
+$dados_vet = $dados->buscar();
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -27,25 +41,25 @@
         <nav class="nav_adm">
             <ul>
                 <li>
-                    <a href="" class="link" id="active">
+                    <a href="../View/listar_consultas.php" class="link">
                         <i class="fa-solid fa-calendar-days"></i>
                         Consultas
                     </a>
                 </li>
                 <li>
-                    <a href="" class="link">
+                    <a href="../View/listar_cliente.php" class="link">
                         <i class="fa-solid fa-user"></i>
                         Clientes
                     </a>
                 </li>
                 <li>
-                    <a href="" class="link">
+                    <a href="../View/listar_veterinarios.php" class="link"  id="active">
                         <i class="fa-solid fa-user-doctor"></i>
                         Veterinarios
                     </a>
                 </li>
                 <li>
-                    <a href="" class="link">
+                    <a href="../View/listar_animais.php" class="link">
                         <i class="fa-solid fa-dog"></i>
                         Animais
                     </a>
@@ -57,29 +71,39 @@
     <main class="container_adm">
         <div class="adm_header">
             <div class="container_adm_title">
-                <h6>Consultas</h6>
+                <h6>Veterinarios</h6>
             </div>
-
+            <div class="container_btn_cad_vet">
+                <a class='btn_vet'>+ Veterinario</a>
+            </div>
         </div>
         <div class="adm_body">
             <div class="conatiner_listar_adm">
                 <table class="lista_adm">
                     <tr>
-                        <th class="adm-1">ID Consulta</th>
-                        <th>Cliente</th>
-                        <th>Animal</th>
-                        <th>Raça</th>
-                        <th>Data</th>
-                        <th class="adm-1">Ver</th>
+                        <th class="adm-1">ID Veterinario</th>
+                        <th>Nome</th>
+                        <th>CEP</th>
+                        <th>CPF</th>
+                        <th>Telefone</th>
+                        <th>CRMV</th>
+                        <th class="adm-1">Editar</th>
                     </tr>
-                    <tr>
-                        <td class="adm-1">1</td>
-                        <td>Rafael Rodrigues dos Santos</td>
-                        <td>Pôlonia</td>
-                        <td>Boxer</td>
-                        <td>25/05/2025</td>
-                        <td class="adm-1"><i class="fa-solid fa-eye"></i></td>
-                    </tr>
+                    <?php
+                    foreach($dados_vet as $vet){
+                        echo'
+                        <tr>
+                            <td class="adm-1">'.$vet['id_vet'].'</td>
+                            <td>'.$vet['nome'].'</td>
+                            <td>'.$vet['cep'].'</td>
+                            <td>'.$vet['cpf'].'</td>
+                            <td>'.$vet['telefone'].'</td>
+                            <td>'.$vet['crmv'].'</td>
+                            <td <a class="adm-1" href = "editar.php?id_cliente='.$vet['id_vet'].'"><i class="fa-solid fa-eye"></i></a></td>
+                        </tr>
+                        ';
+                      }
+                ?>
                 </table>
 
             </div>

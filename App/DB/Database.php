@@ -4,10 +4,10 @@
 class Database{
 
     public $conection;
-    public string $local = 'localhost';
+    public string $local = '10.38.0.117';
     public string $db = 'Dogma';
-    public string $user = 'root';
-    public string $password = '';
+    public string $user = 'devweb';
+    public string $password = 'suporte@22';
     public $table;
 
 
@@ -82,6 +82,29 @@ class Database{
         // COM FIELDS NA FUNÇÃO SELECT COMO PARAMENTRO = "$fields = '*'
         $query = 'SELECT '.$fields.' FROM '. $this->table.' '.$where.' '.$order.' '.$limit;
         // $query = 'SELECT * FROM '. $this->table.' '.$where.' '.$order.' '.$limit.;
+
+        return $this->execute($query);
+        
+    }
+
+    public function Inner($fields = '*', $where=null, $order=null){
+
+   
+        $query = 'SELECT '.$fields.' FROM '. $this->table.' INNER JOIN '.$where.' ON '.$order;
+
+        // print_r($query);
+        // exit();
+
+        return $this->execute($query);
+        
+    }
+    public function Inner2($fields = '*', $where=null, $order=null, $where2=null, $order2=null){
+
+   
+        $query = 'SELECT '.$fields.' FROM '. $this->table.' INNER JOIN '.$where.' ON '.$order.' INNER JOIN '.$where2.' ON '.$order2;
+
+        // print_r($query);
+        // exit();
 
         return $this->execute($query);
         
@@ -175,7 +198,7 @@ create table animal(
 	id_animal INT NOT NULL AUTO_INCREMENT,
     nome varchar(150) not null,
     tipo varchar(50) not null,
-    idade varchar(50) unique not null,
+    idade varchar(50) not null,
     descricao_ani TEXT NOT NULL,
 	id_cliente int not null,
     constraint primary key(id_animal),

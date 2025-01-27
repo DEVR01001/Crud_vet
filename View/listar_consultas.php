@@ -1,14 +1,23 @@
 
 <?php
 
-require '../App/Entity/Cliente.php';
+require '../App/Entity/Consulta.php';
 
 
-$dados = new Cliente();
-$dados_cliente = $dados->buscar();
+$dados = new Consulta();
+
+$result = $dados->getConsulta();
+     
+
+
+
+
+
 
 
 ?>
+
+
 
 
 
@@ -40,13 +49,13 @@ $dados_cliente = $dados->buscar();
         <nav class="nav_adm">
             <ul>
                 <li>
-                    <a href="../View/listar_consultas.php" class="link" >
+                    <a href="../View/listar_consultas.php" class="link"  id="active">
                         <i class="fa-solid fa-calendar-days"></i>
                         Consultas
                     </a>
                 </li>
                 <li>
-                    <a href="../View/listar_cliente.php" class="link"  id="active">
+                    <a href="../View/listar_cliente.php" class="link">
                         <i class="fa-solid fa-user"></i>
                         Clientes
                     </a>
@@ -70,7 +79,7 @@ $dados_cliente = $dados->buscar();
     <main class="container_adm">
         <div class="adm_header">
             <div class="container_adm_title">
-                <h6>Clientes</h6>
+                <h6>Consultas</h6>
             </div>
 
         </div>
@@ -78,25 +87,26 @@ $dados_cliente = $dados->buscar();
             <div class="conatiner_listar_adm">
                 <table class="lista_adm">
                     <tr>
-                        <th class="adm-1">ID Cliente</th>
-                        <th>Nome</th>
-                        <th>Telefone</th>
-                        <th>CEP</th>
-                        <th>CPF</th>
+                        <th class="adm-1">ID Consulta</th>
+                        <th>Cliente</th>
+                        <th>Animal</th>
+                        <th>Raça</th>
+                        <th>Data</th>
                         <th class="adm-1">Editar</th>
                     </tr>
                     <?php
-                    foreach($dados_cliente as $cliente){
+                    foreach($result as $consulta){
                         echo'
                         <tr>
-                            <td class="adm-1">'.$cliente['id_cliente'].'</td>
-                            <td>'.$cliente['nome'].'</td>
-                            <td>'.$cliente['telefone'].'</td>
-                            <td>'.$cliente['cep'].'</td>
-                            <td>'.$cliente['cpf'].'</td>
-                            <td <a class="adm-1" href = "editar.php?id_cliente='.$cliente['id_cliente'].'"><i class="fa-solid fa-eye"></i></a></td>
+                            <td class="adm-1">'.$consulta['id_consulta'].'</td>
+                            <td>'.$consulta['nomeDono'].'</td>
+                            <td>'.$consulta['nomeAnimal'].'</td>
+                            <td>'.$consulta['raçaAnimal'].'</td>
+                            <td>'.$consulta['consulta_date'].'</td>
+                            <td <a class="adm-1" href = "editar.php?id_cliente='.$consulta['id_animal'].'"><i class="fa-solid fa-eye"></i></a></td>
                         </tr>
                         ';
+
                       }
                 ?>
                 </table>

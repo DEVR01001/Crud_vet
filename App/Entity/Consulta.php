@@ -13,7 +13,28 @@ class Consulta{
     public string $id_animal;
     public string $id_vet;
 
+
+
+
+    public function getConsulta(){
+
+        $fileds= 'consulta.*, cliente.nome as nomeDono, animal.nome as nomeAnimal, animal.tipo as raçaAnimal ';
+        $table = 'animal';
+        $table2 = 'cliente';
+        $on= 'consulta.id_animal = animal.id_animal';
+        $on2 = 'animal.id_cliente = cliente.id_cliente';
+
+        $result = (new Database('consulta'))->Inner2($fileds, $table, $on,$table2,$on2)->fetchAll(PDO::FETCH_ASSOC);
+
+
+        // print_r($result);
+        // exit();
     
+       return $result;
+
+
+    }
+
 
 
     public function insert_consulta(){

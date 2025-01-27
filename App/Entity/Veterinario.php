@@ -18,6 +18,12 @@ class Veterinario{
 
 
 
+    public static function buscar($where=null,$order=null,$limit=null){
+        //FETCHALL
+        return (new Database('veterinario'))->select()->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    
     public function insert_vet(){
 
         $db =  new Database('veterinario');
@@ -33,7 +39,7 @@ class Veterinario{
             
             );
 
- 
+
 
         if ($result){
             return $result;

@@ -5,14 +5,9 @@ require '../App/Entity/Animal.php';
 
 
 $dados = new Animal();
-$dados_animal = $dados->buscar();
 
-
-
-
-$nome_cli = new Animal();
-$nome = $nome_cli->getNomeDono();
-
+$result = $dados->getNomeDono();
+     
 
 
 
@@ -48,25 +43,25 @@ $nome = $nome_cli->getNomeDono();
         <nav class="nav_adm">
             <ul>
                 <li>
-                    <a href="" class="link">
+                    <a href="../View/listar_consultas.php" class="link">
                         <i class="fa-solid fa-calendar-days"></i>
                         Consultas
                     </a>
                 </li>
                 <li>
-                    <a href="" class="link" id="active">
+                    <a href="../View/listar_cliente.php" class="link">
                         <i class="fa-solid fa-user"></i>
                         Clientes
                     </a>
                 </li>
                 <li>
-                    <a href="" class="link">
+                    <a href="../View/listar_veterinarios.php" class="link">
                         <i class="fa-solid fa-user-doctor"></i>
                         Veterinarios
                     </a>
                 </li>
                 <li>
-                    <a href="" class="link">
+                    <a href="../View/listar_animais.php" class="link"  id="active">
                         <i class="fa-solid fa-dog"></i>
                         Animais
                     </a>
@@ -94,17 +89,18 @@ $nome = $nome_cli->getNomeDono();
                         <th class="adm-1">Editar</th>
                     </tr>
                     <?php
-                    foreach($dados_animal as $animal){
+                    foreach($result as $animal){
                         echo'
                         <tr>
                             <td class="adm-1">'.$animal['id_animal'].'</td>
                             <td>'.$animal['nome'].'</td>
                             <td>'.$animal['tipo'].'</td>
                             <td>'.$animal['idade'].'</td>
-                            <td>'.$nome.'</td>
-                            <td <a class="adm-1" href = "editar.php?id_cliente='.$animal['id_cliente'].'"><i class="fa-solid fa-eye"></i></a></td>
+                            <td>'.$animal['nomeDono'].'</td>
+                            <td <a class="adm-1" href = "editar.php?id_cliente='.$animal['id_animal'].'"><i class="fa-solid fa-eye"></i></a></td>
                         </tr>
                         ';
+
                       }
                 ?>
                 </table>
