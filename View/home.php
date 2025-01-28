@@ -22,7 +22,7 @@
     <header class="header_user">
         <nav>
             <div class="img_container_logo">
-                <a href="../View/home.html"><img src="../Public/img/D-removebg-preview.png" alt=""></a>
+                <a href="../View/home.php"><img src="../Public/img/D-removebg-preview.png" alt=""></a>
             </div>
             <ul>
                 <li>
@@ -39,7 +39,7 @@
                 </li>
             </ul>
             <div class="container_btn_consulta">
-                <a href="../View/cadastro.html" class="btn_consulta">+ Consulta</a>
+                <a href="../View/cadastro.php" class="btn_consulta">+ Consulta</a>
             </div>
 
         </nav>

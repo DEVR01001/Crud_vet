@@ -1,0 +1,80 @@
+
+.container_vet{
+    display: flex;
+    width: 85%;
+    height: 100vh;
+    flex-direction: column;
+    margin-left: 15%;
+    justify-content: center;
+    align-items: center;
+
+    
+    
+}
+.form_vet{
+    display: flex;
+    padding: 1rem;
+    width: 100%;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f0f0f0;
+}
+
+
+.item_vet{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.item_vet label{
+    display: flex;
+    font-size: 14px;
+    color: #4e4e4e;
+    font-weight: 500;
+}
+.item_vet input{
+    display: flex;
+    width: 500px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    padding: 1rem;
+    color: #4e4e4e;
+    outline: none;
+    font-size: 13px;
+    
+}
+
+
+
+.container_btn_vet{
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    padding-top: 3rem;
+    padding-right: 2rem;
+}
+
+.container_btn_vet .btn_vet{
+    display: flex;
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2rem;
+    color: #ffffff;
+    background-color: #28CB8B;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.container_btn_vet .btn_vet:hover{
+    background-color: #0d7c50;
+}

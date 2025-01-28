@@ -98,7 +98,7 @@ if (isset($_POST['cadastrar'])) {
     <header>
         <nav class="cad_nav">
             <div class="img_container_logo">
-                <a href="../View/home.html"><img src="../Public/img/D-removebg-preview.png" alt=""></a>
+                <a href="../View/home.php"><img src="../Public/img/D-removebg-preview.png" alt=""></a>
             </div>
         </nav>
     </header>
@@ -106,7 +106,7 @@ if (isset($_POST['cadastrar'])) {
         <div class="container_cad">
             <div class="header_cad">
                 <div class="container_sair_cad">
-                    <a href="../View/home.html" class="container_seta">
+                    <a href="../View/home.php" class="container_seta">
                         <i class="fa-solid fa-arrow-left"></i>
                     </a>
                     <h6>Agendamento de Consulta</h6>

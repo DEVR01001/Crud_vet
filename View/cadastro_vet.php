@@ -1,16 +1,44 @@
-
+<!-- 
 
 <?php
 
 require '../App/Entity/Veterinario.php';
 
-
-$dados = new Veterinario();
-$dados_vet = $dados->buscar();
+if(isset($_POST['cadastrarVet'])){
 
 
-?>
+    $nome= $_POST['nomeVet'];
+    $cpf= $_POST['cpfVet'];
+    $cep= $_POST['cepVet'];
+    $telefone= $_POST['telefVet'];
+    $crmv= $_POST['crmv'];
 
+
+    $vet = new Veterinario();
+
+    $vet->nome_vet = $nome;
+    $vet->cpf = $cpf;
+    $vet->cep = $cep;
+    $vet->telefone = $telefone;
+    $vet->crmv = $crmv;
+
+
+    $lastIdVet= $vet->insert_vet();
+
+    if(!$lastIdVet){
+        echo "Erro ao cadastrar veterinario!";
+        exit();
+    }
+
+
+
+}
+
+
+
+
+
+?> -->
 
 
 <!DOCTYPE html>
@@ -22,6 +50,7 @@ $dados_vet = $dados->buscar();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="../Public/css/style.css">
+    <link rel="stylesheet" href="../Public/css/nav_adm.css">
 
     <!-- SCRIPT -->
 
@@ -59,7 +88,7 @@ $dados_vet = $dados->buscar();
                     </a>
                 </li>
                 <li>
-                    <a href="../View/listar_animais.php" class="link">
+                    <a href="../View/listar_animais.php" class="link" >
                         <i class="fa-solid fa-dog"></i>
                         Animais
                     </a>
@@ -68,46 +97,40 @@ $dados_vet = $dados->buscar();
         </nav>
 
     </header>
-    <main class="container_adm">
+    <main class="container_vet">
         <div class="adm_header">
             <div class="container_adm_title">
-                <h6>Veterinarios</h6>
+                <a href="../View/listar_veterinarios.php"><i class="fa-solid fa-chevron-left"></i></a>
+                <h6>Cadastro Veterinario</h6>
             </div>
-            <div class="container_btn_cad_vet">
-                <a href="../View/cadastro_vet.php" class='btn_vet'>+ Veterinario</a>
-            </div>
+
         </div>
         <div class="adm_body">
-            <div class="conatiner_listar_adm">
-                <table class="lista_adm">
-                    <tr>
-                        <th class="adm-1">ID Veterinario</th>
-                        <th>Nome</th>
-                        <th>CEP</th>
-                        <th>CPF</th>
-                        <th>Telefone</th>
-                        <th>CRMV</th>
-                        <th class="adm-1">Editar</th>
-                    </tr>
-                    <?php
-                    foreach($dados_vet as $vet){
-                        echo'
-                        <tr>
-                            <td class="adm-1">'.$vet['id_vet'].'</td>
-                            <td>'.$vet['nome'].'</td>
-                            <td>'.$vet['cep'].'</td>
-                            <td>'.$vet['cpf'].'</td>
-                            <td>'.$vet['telefone'].'</td>
-                            <td>'.$vet['crmv'].'</td>
-                            <td <a class="adm-1" href = "editar.php?id_cliente='.$vet['id_vet'].'"><i class="fa-solid fa-eye"></i></a></td>
-                        </tr>
-                        ';
-                      }
-                ?>
-                </table>
-
-            </div>
-            
+            <form method="post" class="form_vet" action="">
+                <div class="item_vet">
+                    <label for="">Nome Completo</label>
+                    <input name="nomeVet" type="text">
+                </div>
+                <div class="item_vet">
+                    <label for="">CPF</label>
+                    <input  name="cpfVet"  type="text">
+                </div>
+                <div class="item_vet">
+                    <label for="">CEP</label>
+                    <input  name="cepVet"  type="text">
+                </div>
+                <div class="item_vet">
+                    <label for="">Telefone</label>
+                    <input  name="telefVet"  type="text">
+                </div>
+                <div class="item_vet">
+                    <label for="">CRMV</label>
+                    <input  name="crmv" type="text">
+                </div>
+                <div class="container_btn_vet">
+                    <button name="cadastrarVet" class="btn_vet">Cadastrar</button>
+                </div>
+            </form>
 
         </div>
     </main>
