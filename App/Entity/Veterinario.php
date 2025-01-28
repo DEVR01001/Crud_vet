@@ -23,6 +23,31 @@ class Veterinario{
         return (new Database('veterinario'))->select()->fetchAll(PDO::FETCH_ASSOC);
     }
 
+
+    public static function buscar_by_id($id){
+        //FETCHALL
+        return (new Database('veterinario'))->select('id_vet = '.$id)->fetchObject(self::class);
+    }
+
+    public function excluir($id){
+        return (new Database('veterinario'))->delete('id_vet = '.$id);
+
+    }
+
+    
+    public function atualizar(){
+        return (new Database('veterinario'))->update('id_vet ='. $this->id_vet,[
+                                'nome'=> $this->nome_vet,
+                                'cep'=> $this->cep,
+                                'cpf'=> $this->cpf,
+                                'telefone'=> $this->telefone,
+                                'crmv'=> $this->crmv,
+        ]);
+
+        
+
+    }
+
     
     public function insert_vet(){
 

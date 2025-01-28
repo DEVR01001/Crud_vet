@@ -114,13 +114,11 @@ class Database{
     // Função para deletar dados do banco de dados
 
     public function delete($where){
-        $query = 'DELETE FROM'.this->table.'WHERE'.$where;
+        $query = ' DELETE FROM '.$this->table.' WHERE '.$where;
 
-        $this->execute($query);
+        $result = $this->execute($query);
 
         return true;
-
-
 
     }
 
@@ -130,7 +128,7 @@ class Database{
     public function update($where, $values){
         $fields = array_keys($values);
 
-        $query = 'UPDATE'.$this->table.'SET'.implode('=?,',$fields).'=? WHERE '.$where;
+        $query = ' UPDATE '.$this->table.' SET '.implode('=?,',$fields).'=? WHERE '.$where;
 
         $this->execute($query,array_values($values));
         return  true;
@@ -211,12 +209,9 @@ CREATE TABLE consulta (
     id_consulta INT NOT NULL AUTO_INCREMENT,
     consulta_date DATE NOT NULL,  
     consulta_time TIME DEFAULT CURRENT_TIME NOT NULL,
-    status char(2),
     id_animal INT NOT NULL,
-    id_vet INT,
     PRIMARY KEY (id_consulta),
     FOREIGN KEY (id_animal) REFERENCES animal(id_animal),
-    FOREIGN KEY (id_vet) REFERENCES veterinario(id_vet)
 );
 
 

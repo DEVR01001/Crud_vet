@@ -88,6 +88,7 @@ $dados_vet = $dados->buscar();
                         <th>Telefone</th>
                         <th>CRMV</th>
                         <th class="adm-1">Editar</th>
+                        <th class="adm-1">Ecluir</th>
                     </tr>
                     <?php
                     foreach($dados_vet as $vet){
@@ -99,7 +100,8 @@ $dados_vet = $dados->buscar();
                             <td>'.$vet['cpf'].'</td>
                             <td>'.$vet['telefone'].'</td>
                             <td>'.$vet['crmv'].'</td>
-                            <td <a class="adm-1" href = "editar.php?id_cliente='.$vet['id_vet'].'"><i class="fa-solid fa-eye"></i></a></td>
+                            <td> <a class="adm-1" href="editar_vet.php?id_vet='.$vet['id_vet'],'">  <i class="fa-solid fa-eye "></i> </a> </td>
+                            <td> <a class="adm-1" href="excluir_vet.php?id_vet='.$vet['id_vet'],'"> <i class="fa-solid fa-trash"></i> </a> </td>
                         </tr>
                         ';
                       }

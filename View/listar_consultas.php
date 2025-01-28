@@ -92,7 +92,7 @@ $result = $dados->getConsulta();
                         <th>Animal</th>
                         <th>Raça</th>
                         <th>Data</th>
-                        <th class="adm-1">Editar</th>
+                        <th class="adm-1">Ver</th>
                     </tr>
                     <?php
                     foreach($result as $consulta){

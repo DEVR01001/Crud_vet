@@ -11,7 +11,6 @@ class Consulta{
     public int $id_consulta;
     public string $consulta_date;
     public string $id_animal;
-    public string $id_vet;
 
 
 
