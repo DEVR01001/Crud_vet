@@ -26,16 +26,16 @@
             </div>
             <ul>
                 <li>
-                    <a href="">Inicio</a>
+                    <a href="#serviços">Serviços</a>
                 </li>
                 <li>
-                    <a href="">Serviços</a>
+                    <a href="#sobre">Sobre Nós</a>
                 </li>
                 <li>
-                    <a href="">Avaliações</a>
+                    <a href="#avaliações">Avaliações</a>
                 </li>
                 <li>
-                    <a href="">Contato</a>
+                    <a href="#contato">Contato</a>
                 </li>
             </ul>
             <div class="container_btn_consulta">
@@ -55,7 +55,7 @@
                 <div class="swiper-pagination"></div>
               </div>
         </section>
-        <section class="serviços">
+        <section id="serviços" class="serviços">
             <div class="title_default_cont">
                 <h3>Para Eles</h3>
             </div>
@@ -111,7 +111,7 @@
             </div>
 
         </section>
-        <section class="sobre_vet">
+        <section id="sobre" class="sobre_vet">
             <div class="title_default_cont">
                 <h3>Sobre Nós</h3>
             </div>
@@ -129,7 +129,7 @@
                 </div>
             </div>
         </section>
-        <section class="Avaliação">
+        <section id="avaliações" class="Avaliação">
             <div class="title_default_cont">
                 <h3>Avaliação</h3>
             </div>
@@ -195,7 +195,7 @@
                   </div>
             </div>
         </section>
-        <section class="contato">
+        <section id="contato" class="contato">
             <div class="contato_body">
                 <div class="title_contato">Caso tenha alguma dúvida sobre o cuidado do seu pet, não hesite em entrar em contato conosco!</div>
                 <div class="container_btn_contato">

@@ -21,6 +21,11 @@ class Animal{
         return (new Database('animal'))->select()->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public static function buscar_by_id($id){
+        //FETCHALL
+        return (new Database('animal'))->select('id_animal = '.$id)->fetchObject(self::class);
+    }
+
 
     public function getNomeDono(){
 

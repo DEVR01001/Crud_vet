@@ -4,10 +4,10 @@
 class Database{
 
     public $conection;
-    public string $local = '10.38.0.117';
+    public string $local = 'localhost';
     public string $db = 'Dogma';
-    public string $user = 'devweb';
-    public string $password = 'suporte@22';
+    public string $user = 'root';
+    public string $password = '';
     public $table;
 
 
@@ -211,7 +211,7 @@ CREATE TABLE consulta (
     consulta_time TIME DEFAULT CURRENT_TIME NOT NULL,
     id_animal INT NOT NULL,
     PRIMARY KEY (id_consulta),
-    FOREIGN KEY (id_animal) REFERENCES animal(id_animal),
+    FOREIGN KEY (id_animal) REFERENCES animal(id_animal)
 );
 
 

@@ -103,7 +103,7 @@ $result = $dados->getConsulta();
                             <td>'.$consulta['nomeAnimal'].'</td>
                             <td>'.$consulta['raçaAnimal'].'</td>
                             <td>'.$consulta['consulta_date'].'</td>
-                            <td <a class="adm-1" href = "editar.php?id_cliente='.$consulta['id_animal'].'"><i class="fa-solid fa-eye"></i></a></td>
+                             <td> <a class="adm-1" href="editar_consuta.php?id_animal='.$consulta['id_animal'],'">  <i class="fa-solid fa-eye "></i> </a> </td>
                         </tr>
                         ';
 

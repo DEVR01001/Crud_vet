@@ -20,10 +20,17 @@ class Cliente{
     public string $complemento;
 
 
+
     public static function buscar($where=null,$order=null,$limit=null){
         //FETCHALL
         return (new Database('cliente'))->select()->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public static function buscar_by_id($id){
+        //FETCHALL
+        return (new Database('cliente'))->select('id_cliente = '.$id)->fetchObject(self::class);
+    }
+    
 
 
     public function insert_cliente(){

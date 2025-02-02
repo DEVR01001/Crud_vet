@@ -1,0 +1,93 @@
+.container_con{
+    display: flex;
+    width: 85%;
+    height: 100%;
+    flex-direction: column;
+    margin-left: 15%;
+    justify-content: center;
+    align-items: center;
+
+    
+    
+}
+
+
+
+
+
+.editar_con{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+    height: 100%;
+    
+}
+
+
+.editar_cli{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+
+.item_editar{
+    display: flex;
+    flex-direction: column;
+}
+
+.item_editar label{
+    display: flex;
+    color: #828282;
+    font-size: 13px;
+    font-weight: 500;
+
+}
+
+.item_editar input{
+    display: flex;
+    width: 350px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #f4f4f4c7;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    color: #4e4e4e;
+}
+
+.n_casa input{
+    width: 100px;
+
+}
+.comple input{
+    width:700px;
+    height: 40px;
+
+}
+
+
+
+
+.editar_ani{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+}
+
+.item_editar textarea{
+    display: flex;
+    width: 1200px;
+    background-color: #f4f4f4c7;
+    border: none;
+    border-radius: 10px;
+    color: #4e4e4e;
+    padding: 1rem;
+    outline-color: #c9c9c9;
+}
+
