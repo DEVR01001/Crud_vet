@@ -250,3 +250,42 @@
 .lista_adm a i:hover{
     transform: scale(1.25);
 }
+
+
+
+
+
+
+
+
+.container_btn_sair{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+.container_btn_sair a{
+    display: flex;
+    width: 130px;
+    height: 35px;
+    background-color: rgb(239, 239, 239);
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 15px;
+    color: #4e4e4e;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    gap: 10px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+}
+
+
+.container_btn_sair a:hover{
+    background-color: rgb(209, 209, 209);
+}

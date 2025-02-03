@@ -1,0 +1,87 @@
+
+<?php
+require '../App/Session/Login.php';
+
+Login::requireLogin();
+
+
+
+
+?>
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="../Public/css/style.css">
+
+    <!-- SCRIPT -->
+
+    <script src="../Public/js/swiper.js" defer></script>
+
+    <!-- SWIPER -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <title>Dogma</title>
+</head>
+<body>
+    <header class="header_user">
+        <nav>
+            <div class="img_container_logo">
+                <a href="../View/logado.php"><img src="../Public/img/D-removebg-preview.png" alt=""></a>
+            </div>
+            <ul>
+                <li>
+                    <a href="#serviços"></a>
+                </li>
+                <li>
+                    <a href="#sobre"></a>
+                </li>
+                <li>
+                    <a href="#avaliações"></a>
+                </li>
+                <li>
+                    <a href="#contato"></a>
+                </li>
+                <li>
+                    <a href="../View/user_consulta.html"></a>
+                </li>
+            </ul>
+            <div class="container_btn_consulta">
+                <a href="../View/cadastro_logado.php" class="btn_consulta">+ Consulta</a>
+            </div>
+
+        </nav>
+    </header>
+    <main>
+        <div class="container_user_consultas">
+            <table class="table_user">
+                <tr>
+                    <th class="td-1">Id Consulta</th>
+                    <th>Animal</th>
+                    <th>Raça</th>
+                    <th>Data</th>
+                    <th class="td-1">Mais</th>
+                </tr>
+                <tr>
+                    <td class="td-1">1</td>
+                    <td>Rex</td>
+                    <td>Boxer</td>
+                    <td>23/34/20024</td>
+                    <td class="td-1"><i class="fa-regular fa-eye"></i></td>
+                </tr>
+                
+            </table>
+        </div>
+    </main>
+    
+</body>
+</html>

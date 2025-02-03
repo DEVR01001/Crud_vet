@@ -14,6 +14,9 @@ if(isset($_POST['cadastrarVet'])){
     $crmv= $_POST['crmv'];
 
 
+
+
+
     $vet = new Veterinario();
 
     $vet->nome_vet = $nome;
@@ -95,6 +98,9 @@ if(isset($_POST['cadastrarVet'])){
                 </li>
             </ul>
         </nav>
+        <div class="container_btn_sair">
+            <a href="../View/home.php"><i class="fa-solid fa-arrow-left"></i>Sair</a>
+        </div>
 
     </header>
     <main class="container_vet">

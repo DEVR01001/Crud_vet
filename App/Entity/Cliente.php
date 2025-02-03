@@ -21,6 +21,18 @@ class Cliente{
 
 
 
+
+
+    
+    public static function getUsuarioPorCpf($where=null, $order =null, $limit = null){
+
+        return (new Database('cliente'))->select('cpf = "'. $where .'"')->fetchObject(self::class);
+
+ 
+        
+
+    }
+
     public static function buscar($where=null,$order=null,$limit=null){
         //FETCHALL
         return (new Database('cliente'))->select()->fetchAll(PDO::FETCH_ASSOC);

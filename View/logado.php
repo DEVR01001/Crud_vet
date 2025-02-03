@@ -1,15 +1,13 @@
 
 <?php
-
 require '../App/Session/Login.php';
 
-Login::requireLogout();
+Login::requireLogin();
+
+
 
 
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -51,7 +49,7 @@ Login::requireLogout();
                     <a href="#contato">Contato</a>
                 </li>
                 <li>
-                    <a href="../View/login.php">Login</a>
+                    <a href="../View/user_consulta.php">Ver Consultas</a>
                 </li>
             </ul>
             <div class="container_btn_consulta">

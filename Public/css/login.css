@@ -1,0 +1,81 @@
+.login{
+    display: flex;
+    width: 35%;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    gap: 2rem;
+    border-radius: 10px;
+
+}
+
+.login .item_login{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item_login label{
+    display: flex;
+    color: #4e4e4e;
+    font-weight: 500;
+}
+
+.item_login input{
+    display: flex;
+    width: 430px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #f4f4f4c7;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    color: #4e4e4e;
+}
+
+
+
+
+
+
+
+.conatiner_login_btn{
+    display: flex;
+    width: 80%;
+    justify-content: end;
+    padding-top: 1rem;
+
+}
+
+
+.conatiner_login_btn .btn_login{
+    display: flex;
+    width: 140px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color:#ffffff ;
+    border: none;
+    background-color: #28CB8B;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+.conatiner_login_btn .btn_login:hover{
+    background-color:#656565;
+}
+
+
+
+.erro{
+    display: flex;
+    width: 80%;
+    color: rgb(216, 43, 43);
+    font-weight: 400;
+    font-size: 13px;
+}

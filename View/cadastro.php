@@ -4,6 +4,7 @@ require '../App/Entity/Animal.php';
 require '../App/Entity/Cliente.php';
 require '../App/Entity/Consulta.php';
 
+
 if (isset($_POST['cadastrar'])) {
 
 

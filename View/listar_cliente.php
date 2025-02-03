@@ -65,6 +65,9 @@ $dados_cliente = $dados->buscar();
                 </li>
             </ul>
         </nav>
+        <div class="container_btn_sair">
+            <a href="../View/home.php"><i class="fa-solid fa-arrow-left"></i>Sair</a>
+        </div>
 
     </header>
     <main class="container_adm">

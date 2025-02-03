@@ -106,6 +106,9 @@ $complemento= $cliente->complemento
                 </li>
             </ul>
         </nav>
+        <div class="container_btn_sair">
+            <a href="../View/home.php"><i class="fa-solid fa-arrow-left"></i>Sair</a>
+        </div>
 
     </header>
     <main class="container_con">
