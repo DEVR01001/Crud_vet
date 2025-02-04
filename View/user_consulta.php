@@ -1,9 +1,33 @@
 
 <?php
+
+require '../App/Entity/Consulta.php';
+
 require '../App/Session/Login.php';
 
 Login::requireLogin();
 
+$dados = new Consulta();
+
+
+
+if (isset($_SESSION['cliente'])){
+
+    $id = $_SESSION['cliente'];
+
+    $idCli= $id['id_cliente'];
+
+
+
+}
+
+
+$result = $dados->getConsultaUser($idCli);
+
+
+// print_r($result);
+// exit();
+    
 
 
 
@@ -63,6 +87,14 @@ Login::requireLogin();
     </header>
     <main>
         <div class="container_user_consultas">
+        <div class="header_cad">
+                <div class="container_sair_cad">
+                    <a href="../View/logado.php" class="container_seta">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                    <h6>Histórico de Consultas </h6>
+                </div>
+            </div>
             <table class="table_user">
                 <tr>
                     <th class="td-1">Id Consulta</th>
@@ -71,14 +103,20 @@ Login::requireLogin();
                     <th>Data</th>
                     <th class="td-1">Mais</th>
                 </tr>
-                <tr>
-                    <td class="td-1">1</td>
-                    <td>Rex</td>
-                    <td>Boxer</td>
-                    <td>23/34/20024</td>
-                    <td class="td-1"><i class="fa-regular fa-eye"></i></td>
-                </tr>
-                
+                <?php
+                    foreach($result as $consulta){
+                        echo'
+                        <tr>
+                            <td class="td-1">'.$consulta['id_consulta'].'</td>
+                            <td>'.$consulta['nomeAnimal'].'</td>
+                            <td>'.$consulta['raçaAnimal'].'</td>
+                            <td>'.$consulta['consulta_date'].'</td>
+                             <td> <a class="td-2" href="ver_consulta_user.php?id_consulta='.$consulta['id_consulta'],'">  <i class="fa-solid fa-eye "></i> </a> </td>
+                        </tr>
+                        ';
+
+                      }
+                ?>
             </table>
         </div>
     </main>

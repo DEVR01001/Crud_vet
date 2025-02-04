@@ -97,7 +97,7 @@ $dados_cliente = $dados->buscar();
                             <td>'.$cliente['telefone'].'</td>
                             <td>'.$cliente['cep'].'</td>
                             <td>'.$cliente['cpf'].'</td>
-                            <td <a class="adm-1" href = "editar.php?id_cliente='.$cliente['id_cliente'].'"><i class="fa-solid fa-eye"></i></a></td>
+                            <td> <a class="adm-1" href="editar_cliente.php?id_cliente='.$cliente['id_cliente'],'">  <i class="fa-solid fa-eye "></i> </a> </td>
                         </tr>
                         ';
                       }

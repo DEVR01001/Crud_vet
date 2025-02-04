@@ -15,7 +15,8 @@
 .header_user nav ul{
     display: flex;
     gap: 3rem;
-    width: 40%;
+    width: 50%;
+
     justify-content: center;
 }
 .header_user nav ul li{

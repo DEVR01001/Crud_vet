@@ -64,7 +64,7 @@ class Animal{
             );
 
         if ($result){
-            return true;
+            return $result;
         }else{
             return false;
         }

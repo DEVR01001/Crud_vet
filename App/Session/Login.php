@@ -21,18 +21,31 @@ class Login{
             'nome' => $obCliente->nome,
             'cpf' => $obCliente->cpf,
         ];
-
+        
         header('location: location: ../View/logado.php');
         exit;
     }
+
+    public static function loginADM($obCliente){
+        self::init();
+
+        // Sessão de usuario
+        $_SESSION['administrador'] =[
+            'id_adm' => $obCliente->id_adm,
+            'nome' => $obCliente->nome,
+            'cpf' => $obCliente->cpf,
+        ];
+        
+        header('location: ../View/listar_consultas.php');
+        exit;
+    }
+
 
 
     // Verificar se o usuario está logado
 
     public static function isLogged(){
-
         self::init();
-    
         return isset($_SESSION['cliente']['id_cliente']);
         
         
@@ -56,10 +69,15 @@ class Login{
         if (self::isLogged()){
             header('location: ../View/logado.php');
             exit;
-        }else{
-            header('location: ../View/Home.php');
-            exit;
         }
+    }
+
+    public static function lougout(){
+        session_start();
+        session_unset();
+        session_destroy();
+        header('location: ../View/home.php');
+        exit();
 
     }
 

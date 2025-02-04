@@ -75,7 +75,7 @@ if (isset($_POST['cadastrar'])) {
     $resultado_consulta = $consulta->insert_consulta();
 
     if ($resultado_consulta) {
-        echo "Cadastro completo com sucesso!";
+        return true;
     } else {
         echo "Erro ao cadastrar consulta!";
     }

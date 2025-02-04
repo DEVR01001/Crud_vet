@@ -42,6 +42,22 @@ class Cliente{
         //FETCHALL
         return (new Database('cliente'))->select('id_cliente = '.$id)->fetchObject(self::class);
     }
+
+    public function atualizar(){
+        return (new Database('cliente'))->update('id_cliente ='. $this->id_cliente,[
+                                'nome'=> $this->nome_cliente,
+                                'cep'=> $this->cep,
+                                'cpf'=> $this->cpf,
+                                'telefone'=> $this->telefone,
+                                'rua'=> $this->rua,
+                                'bairro'=> $this->bairro,
+                                'numero_casa'=> $this->numero_casa,
+                                'complemento'=> $this->complemento,
+        ]);
+
+        
+
+    }
     
 
 

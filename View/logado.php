@@ -51,9 +51,12 @@ Login::requireLogin();
                 <li>
                     <a href="../View/user_consulta.php">Ver Consultas</a>
                 </li>
+                <li>
+                    <a href="../View/logout.php">Sair</a>
+                </li>
             </ul>
             <div class="container_btn_consulta">
-                <a href="../View/cadastro.php" class="btn_consulta">+ Consulta</a>
+                <a href="../View/cadastro_logado.php" class="btn_consulta">+ Consulta</a>
             </div>
 
         </nav>

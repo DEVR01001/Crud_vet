@@ -4,10 +4,10 @@
 class Database{
 
     public $conection;
-    public string $local = '10.38.0.117';
+    public string $local = 'localhost';
     public string $db = 'Dogma';
-    public string $user = 'devweb';
-    public string $password = 'suporte@22';
+    public string $user = 'root';
+    public string $password = '';
     public $table;
 
 
@@ -98,6 +98,23 @@ class Database{
         return $this->execute($query);
         
     }
+
+   
+    public function Inner3($fields = '*', $table1 = null, $condition1 = null, $table2 = null, $condition2 = null, $id){
+
+   
+      $query = 'SELECT ' . $fields . 
+         ' FROM ' . $this->table . 
+         ' INNER JOIN ' . $table1 . ' ON ' . $condition1 . 
+         ' INNER JOIN ' . $table2 . ' ON ' . $condition2 . 
+         ' WHERE cliente.id_cliente = '.$id;
+
+        // print_r($query);
+        // exit();
+
+        return $this->execute($query);
+        
+    }
     public function Inner2($fields = '*', $where=null, $order=null, $where2=null, $order2=null){
 
    
@@ -175,6 +192,16 @@ create table cliente(
     complemento varchar(200),
      /*chave primaria*/
     constraint primary key(id_cliente)
+);
+
+
+create table administrador(
+	id_adm INT NOT NULL AUTO_INCREMENT,
+    nome varchar(150) not null,
+    cpf char(11) unique not null,
+    
+     /*chave primaria*/
+    constraint primary key(id_adm)
 );
 
 
